@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS Course Test Page</title>
+    <link rel="stylesheet" type="text/css" href="src/style.css">
+</head>
+<body>
+    <h3>Hello!</h3>
+    <div class="tab">
+        <button id="searchButton" class="tablinks" onclick="openTab(event, 'searchPane')">Search employee</button>
+        <button class="tablinks" onclick="openTab(event, 'addPane')">Add employee</button>
+    </div>
+    <div id="addPane" class="tabcontent">
+        <h3>Add employee</h3>
+        <div id="addEmployeeDiv">
+            <p>
+                <label for="nameInput">Name: </label>
+                <input id="nameInput" placeholder="Please enter name">
+            </p>
+            <p>
+                <label for="surnameInput"> Surname: </label>
+                <input id="surnameInput" placeholder="Please enter surname">
+            </p>
+            <p>
+                <label for="managerSelect">Manager:</label>
+                <select id="managerSelect"></select>
+            </p>
+            <div id="addEmployeeFormErrorMessage"></div>
+            <p>
+                <button onclick="addEmployeeUI()" id="addEmployeeButton">Add employee</button>
+            </p>
+        </div>
+    </div>
+    <div id="searchPane" class="tabcontent">
+        <h3>Search employee</h3>
+        <form>
+            <div><p>Search by name:</p></div>
+            <input id="nameSearch" placeholder="Name" size="30">
+            <input id="surnameSearch" placeholder="Surname" size="30">
+            <p>Search by manager:</p>
+            <select id="managerSearch"></select>
+            <br/>
+            <p>
+                <button type=button onclick="searchEmployeeUI()" id="searchEmployeesButton">Find employees</button>
+                <input type="reset" value="Reset form">
+            </p>
+        </form>
+        <h4>List of all employees:</h4>
+        <div id="employeesPlaceholder"></div>
+    </div>
+
+</body>
+
+<meta charset="utf-8" />
+<script src="src/employees-json.js"></script>
+<script src="src/service.js"></script>
+<script src="src/ui.js"></script>
+
+<script>
+    runUI();
+</script>
+
+
+</html>
